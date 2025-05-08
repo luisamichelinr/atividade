@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Catálogo</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Biblioteca Virtual</h1>
+            <nav>
+                <a class="botao" href="/">Home</a>
+                <a class="botao" href="/catalogo">Catálogo</a>
+            </nav>
+
+        </header>
+        <div class="container">
+            <h1>Catálogo</h1>
+
+            {% with mensagens = get_flashed_messages() %}
+                {% if mensagens %}
+                    <div class="mensagens">
+                      {% for msg in mensagens %}
+                        <p>{{ msg }}</p>
+                      {% endfor %}
+                    </div>
+              {% endif %}
+            {% endwith %}
+
+            <a class="botao" href="/adicionar_livro">+ Adicionar livro</a>
+
+            <table>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Ano</th>
+                    <th>Devolver até</th>
+                    <th>Ações</th>
+                </tr>
+                {% for livro in livros %}
+                <tr>
+                    <td>{{ livro.titulo }}</td>
+                    <td>{{ livro.autor }}</td>
+                    <td>{{ livro.ano }}</td>
+                    <td>{{ livro.devolver }}</td>
+                    <td>
+                        <a class="botao pequeno" href="/editar_livro/{{ livro.codigo }}">Editar</a>
+                        <a class="botao vermelho pequeno" href="/apagar_livro/{{ livro.codigo }}">Apagar</a>
+                        {% if livro.emprestado == False %}
+                            <a class="botao emprestar" href="/emprestar/{{ livro.codigo }}">Emprestar</a>
+                        {% else %}
+                            <a class="botao devolver" href="/devolver/{{ livro.codigo }}">Devolver</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

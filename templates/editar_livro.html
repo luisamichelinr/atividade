@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Editar livro</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Biblioteca Virtual</h1>
+            <nav>
+                <a class="botao" href="/">Home</a>
+                <a class="botao" href="/catalogo">Catálogo</a>
+            </nav>
+
+        </header>
+        <div class="container">
+            <h1> Editar livro</h1>
+            <form method="POST">
+                <input type="text" name="titulo" value="{{ livro[1] }}" required>
+                <input type="text" name="autor" value="{{ livro[2] }}" required>
+                <input type="number" name="ano" value="{{ livro[3] }}" required>
+                <button class="botao cheio" type="submit">Salvar</button>
+                <a class="botao cancelar cheio" href="/">Cancelar</a>
+
+
+            </form>
+        </div>
+    </body>
+</html>

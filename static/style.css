@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #d4eefb;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #91a7b3(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bb8;
+}
+
+/* Botões */
+.botao {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.botao:hover {
+    background-color: #2980b9;
+}
+
+.botao.vermelho {
+    background-color: #e74c3c;
+}
+
+.botao.vermelho:hover {
+    background-color: #c0392b;
+}
+
+.botao.pequeno {
+    padding: 6px 10px;
+    font-size: 0.9em;
+}
+
+.botao.cheio {
+    width: 100%;
+    text-align: center;
+}
+
+.botao.cancelar {
+    background-color: #95a5a6;
+}
+
+.botao.cancelar:hover {
+    background-color: #7f8c8d;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Formulários */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
